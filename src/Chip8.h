@@ -16,7 +16,7 @@ private:
 	uint8_t dtimer{ 0 };							// delay timer
 	uint8_t stimer{ 0 };							// sound timer
 	std::array<uint8_t, 16> vr{ {0} };				// variable registers
-	std::array<uint8_t, 16> keys{ {0} };			// input keys
+	std::array<bool, 16> keys{ {0} };			// input keys
 	const std::array<uint8_t, 80> font =    // font - represents 16 hex characters. 4 pixels wide, 5 pixels tall. 5 bytes per character
 	{
 		0xF0, 0x90, 0x90, 0x90, 0xF0, //0
@@ -47,4 +47,5 @@ public:
 	std::array<bool, 64 * 32> display{ {0} };      // 64 x 32 pixel display
 	bool bitshiftFlag{ false };
 	bool offsetFlag{ false };
+	bool memoryFlag{ false };
 };
