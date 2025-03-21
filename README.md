@@ -1,3 +1,5 @@
+# Chip8 Emulator
+
 Simple Chip8 Emulator in C++. Chip8 is an interpreted language from the 1970s. This emulator is modeled after the original version created for the COSMAC VIP and Telmac 1800. Using this project as an entry into lower level development and emulation.
 
 Requires: SDL3 and CMake
