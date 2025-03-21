@@ -10,14 +10,14 @@ class Chip8
 private:
 	std::array<uint8_t, 4096> memory{ {0} };		// 4kB memory
 	uint16_t I{ 0 };								// index register
-	uint16_t pc{ 0 };							// program counter
-	uint16_t opcode{ 0 };						// operation codes
-	std::vector<uint16_t> stack{ {0} };		    // stack
+	uint16_t pc{ 0 };								// program counter
+	uint16_t opcode{ 0 };							// operation codes
+	std::vector<uint16_t> stack{ {0} };				// stack
 	uint8_t dtimer{ 0 };							// delay timer
 	uint8_t stimer{ 0 };							// sound timer
 	std::array<uint8_t, 16> vr{ {0} };				// variable registers
-	std::array<bool, 16> keys{ {0} };			// input keys
-	const std::array<uint8_t, 80> font =    // font - represents 16 hex characters. 4 pixels wide, 5 pixels tall. 5 bytes per character
+	
+	const std::array<uint8_t, 80> font				// font - represents 16 hex characters. 4 pixels wide, 5 pixels tall. 5 bytes per character
 	{
 		0xF0, 0x90, 0x90, 0x90, 0xF0, //0
 		0x20, 0x60, 0x20, 0x20, 0x70, //1
@@ -41,11 +41,17 @@ private:
 public:
 
 	Chip8();
-	void fetch();
-	void execute();
-	bool load(const std::string& filepath);
-	std::array<bool, 64 * 32> display{ {0} };      // 64 x 32 pixel display
 	bool bitshiftFlag{ false };
 	bool offsetFlag{ false };
 	bool memoryFlag{ false };
+	bool vInterruptFlag{ false };
+	bool draw{ false };
+	std::array<bool, 64 * 32> display{ {0} };      // 64 x 32 pixel display
+	std::array<bool, 16> keys{ {0} };			   // input keys
+	void fetch();
+	void execute();
+	bool load(const std::string& filepath);
+	void updateTimers();
+	bool playSound();
+
 };
