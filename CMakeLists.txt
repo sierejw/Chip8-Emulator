@@ -29,7 +29,3 @@ if(WIN32)
         VERBATIM
     )
 endif()
-
-
-
-# TODO: Add tests and install targets if needed.
