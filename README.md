@@ -23,7 +23,7 @@ SDL3 and CMake
 -o, when on, adds value of variable register x to jump address, otherwise will add value at variable register 0 to jump address. (not recommended)  
 -v, enables vertical interrupt used in original Chip8. (recommended)
 
-All recommended arguements are to emulate original Chip8 behavior. 
+All recommended arguments are to emulate original Chip8 behavior. 
 
 
 ## References:
